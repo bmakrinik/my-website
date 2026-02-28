@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Babis Makrynikolas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f5f2ec;
+      --text: #1a1a1a;
+      --muted: #888;
+      --link-color: #1a1a1a;
+      --nav-width: 140px;
+    }
+
+    html {
+      font-size: 18px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'EB Garamond', Georgia, serif;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Layout ── */
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── Main content ── */
+    main {
+      padding: 4rem 0 8rem;
+    }
+
+    /* ── Header ── */
+    .site-header {
+      margin-bottom: 2.5rem;
+    }
+
+    .site-header h1 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: -0.01em;
+    }
+
+    /* ── Tab nav ── */
+    .tab-nav {
+      display: flex;
+      gap: 1.4rem;
+      margin-top: 1.1rem;
+    }
+
+    .tab-nav a {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .tab-nav a:hover,
+    .tab-nav a.active { color: var(--text); }
+
+    /* ── Sections ── */
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    section h2 {
+      font-size: 0.78rem;
+      font-weight: 400;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid #ddd;
+    }
+
+    /* ── About ── */
+    #about p {
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
+    }
+
+    #about p:last-child { margin-bottom: 0; }
+
+    /* ── Writing & Talks ── */
+    .item-list { list-style: none; }
+
+    .item-list li {
+      padding: 1rem 0;
+      border-bottom: 1px solid #e0ddd7;
+    }
+
+    .item-list li:first-child { border-top: 1px solid #e0ddd7; }
+
+    .item-inner {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .item-thumb {
+      width: 56px;
+      height: 56px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .item-body { flex: 1; min-width: 0; }
+
+    .item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+
+    .item-title {
+      font-size: 1.02rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .item-title:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    .item-date {
+      font-size: 0.83rem;
+      color: var(--muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .item-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
+      font-style: italic;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* ── Links ── */
+    #links .link-list { list-style: none; }
+
+    #links .link-list li {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid #e0ddd7;
+    }
+
+    #links .link-list li:first-child { border-top: 1px solid #e0ddd7; }
+
+    #links .link-list a {
+      font-size: 1.02rem;
+      color: var(--text);
+      text-decoration: none;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    #links .link-list a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    #links .link-list .link-sub {
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* ── Placeholder ── */
+    .placeholder {
+      font-size: 0.88rem;
+      color: #bbb;
+      font-style: italic;
+      padding: 0.85rem 0;
+      border-top: 1px solid #e0ddd7;
+      border-bottom: 1px solid #e0ddd7;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .page { padding: 0 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main>
+
+      <header class="site-header">
+        <h1>Babis Makrynikolas</h1>
+        <nav class="tab-nav">
+          <a href="#" class="nav-link active" data-target="about">About</a>
+          <a href="#" class="nav-link" data-target="writing">Writing</a>
+          <a href="#" class="nav-link" data-target="talks">Talks</a>
+          <a href="#" class="nav-link" data-target="links">Links</a>
+        </nav>
+      </header>
+
+      <!-- ── About ── -->
+      <section id="about" class="active">
+        <h2>About</h2>
+        <p>Babis Makrynikolas is a product executive with fifteen years of experience.</p>
+        <p>At Amazon, he worked on marketplace pricing serving 2M+ third-party sellers, helped scale Prime Now's last-mile logistics, and led pricing strategy for EC2, Amazon's largest cloud service. At Blueground, he is part of the executive team, currently leading the marketplace business and demand generation, and has previously overseen product management, design, pricing, and BI/Analytics, contributing to scaling the company from early stage to $700M+ in revenue.</p>
+        <p>Babis holds an MBA from UCLA Anderson and a BSc in Banking and Financial Management from the University of Piraeus.</p>
+        <p>He writes regularly on <a href="https://bmak.substack.com" target="_blank" rel="noopener" style="color:inherit;">Rubik's Cube</a>, a Substack covering marketplace dynamics, product strategy, and the ideas in between.</p>
+        <p>Outside of work, he is passionate about riddles and logic puzzles, and is currently working on a project in that space.</p>
+      </section>
+
+      <!-- ── Writing ── -->
+      <section id="writing">
+        <h2>Writing</h2>
+        <ul class="item-list" id="writing-list">
+          <li class="placeholder">Loading articles…</li>
+        </ul>
+      </section>
+
+      <!-- ── Talks ── -->
+      <section id="talks">
+        <h2>Talks</h2>
+        <ul class="item-list">
+          <li>
+            <div class="item-row">
+              <a href="https://www.youtube.com/watch?v=5XSjXAvZ4T8&list=PL1ctb4v55S4urP0ffGFGqa_Aq8ScARzYO&index=2" class="item-title" target="_blank" rel="noopener">Product management lessons from Amazon's success</a>
+            </div>
+          </li>
+          <li>
+            <div class="item-row">
+              <a href="https://www.youtube.com/watch?v=zPAHCWad90E&list=PL1ctb4v55S4urP0ffGFGqa_Aq8ScARzYO&index=3" class="item-title" target="_blank" rel="noopener">Hiring challenges: How to build a high performing product team</a>
+            </div>
+          </li>
+          <li>
+            <div class="item-row">
+              <a href="https://www.youtube.com/watch?v=CdNtH9itLlk&list=PL1ctb4v55S4urP0ffGFGqa_Aq8ScARzYO&index=2" class="item-title" target="_blank" rel="noopener">Pricing 101: A behind the scenes discussion about product pricing</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ── Links ── -->
+      <section id="links">
+        <h2>Links</h2>
+        <ul class="link-list">
+          <li>
+            <a href="https://bmak.substack.com" target="_blank" rel="noopener">
+              Substack <span class="link-sub">— The Rubik's Cube</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/makrynikolas/" target="_blank" rel="noopener">
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/bmakrynik" target="_blank" rel="noopener">
+              Twitter / X
+            </a>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    // ── Tab navigation ──
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = link.dataset.target;
+        navLinks.forEach(l => l.classList.remove('active'));
+        sections.forEach(s => s.classList.remove('active'));
+        link.classList.add('active');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+
+    // ── Substack RSS feed ──
+    const RSS_URL = 'https://bmak.substack.com/feed';
+    const API = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}`;
+
+    function formatDate(dateStr) {
+      const d = new Date(dateStr);
+      return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+    }
+
+    function stripHtml(html) {
+      const tmp = document.createElement('div');
+      tmp.innerHTML = html;
+      return tmp.textContent || '';
+    }
+
+    async function loadArticles() {
+      const list = document.getElementById('writing-list');
+      try {
+        const res = await fetch(API);
+        const data = await res.json();
+
+        if (data.status !== 'ok' || !data.items.length) {
+          list.innerHTML = '<li class="placeholder">Could not load articles — <a href="https://bmak.substack.com" target="_blank" rel="noopener" style="color:inherit;">visit Substack</a>.</li>';
+          return;
+        }
+
+        list.innerHTML = data.items.map(item => {
+          const rawDesc = stripHtml(item.description || '');
+          const rawContent = stripHtml(item.content || '');
+          const source = rawDesc.length > 120 ? rawDesc : (rawContent || rawDesc);
+          const desc = source ? source.slice(0, 500).trim() + '…' : '';
+          const thumb = item.thumbnail || item.enclosure?.link || '';
+          return `
+            <li>
+              <div class="item-inner">
+                ${thumb ? `<img class="item-thumb" src="${thumb}" alt="" loading="lazy">` : ''}
+                <div class="item-body">
+                  <div class="item-row">
+                    <a href="${item.link}" class="item-title" target="_blank" rel="noopener">${item.title}</a>
+                  </div>
+                  ${desc ? `<p class="item-desc">${desc}</p>` : ''}
+                </div>
+              </div>
+            </li>`;
+        }).join('');
+      } catch {
+        list.innerHTML = '<li class="placeholder">Could not load articles — <a href="https://bmak.substack.com" target="_blank" rel="noopener" style="color:inherit;">visit Substack</a>.</li>';
+      }
+    }
+
+    loadArticles();
+  </script>
+</body>
+</html>
