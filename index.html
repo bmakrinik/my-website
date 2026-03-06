@@ -4,6 +4,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Babis Makrynikolas</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Babis Makrynikolas is a product executive with fifteen years of experience. Writing about marketplaces, product strategy, and the ideas in between.">
+  <meta name="author" content="Babis Makrynikolas">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.makrynikolas.com">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Babis Makrynikolas",
+    "url": "https://www.makrynikolas.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/makrynikolas/",
+      "https://x.com/bmakrynik",
+      "https://bmak.substack.com"
+    ],
+    "jobTitle": "Product Executive",
+    "description": "Product executive with fifteen years of experience. Writing about marketplaces, product strategy, and the ideas in between."
+  }
+  </script>
+
+  <!-- OG Tags -->
+  <meta property="og:title" content="Babis Makrynikolas">
+  <meta property="og:description" content="Product executive. Writing about marketplaces, product strategy, and the ideas in between.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.makrynikolas.com">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Babis Makrynikolas">
+  <meta name="twitter:description" content="Product executive. Writing about marketplaces, product strategy, and the ideas in between.">
+  <meta name="twitter:site" content="@bmakrynik">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-55HVPGSVE3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-55HVPGSVE3');
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231a1a1a'/><text y='72' x='50' text-anchor='middle' font-size='58' font-family='Georgia,serif' fill='%23f5f2ec'>B</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <style>
@@ -44,7 +88,7 @@
 
     /* ── Header ── */
     .site-header {
-      margin-bottom: 2.5rem;
+      margin-bottom: 3rem;
     }
 
     .site-header h1 {
@@ -54,11 +98,20 @@
       letter-spacing: -0.01em;
     }
 
+    .tagline {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
     /* ── Tab nav ── */
     .tab-nav {
       display: flex;
       gap: 1.4rem;
-      margin-top: 1.1rem;
+      margin-top: 1.75rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid #ddd;
     }
 
     .tab-nav a {
@@ -200,6 +253,20 @@
     /* ── Responsive ── */
     @media (max-width: 640px) {
       .page { padding: 0 1.25rem; }
+
+      .site-header h1 { font-size: 1rem; }
+
+      .tab-nav { gap: 1rem; }
+      .tab-nav a { font-size: 0.85rem; }
+
+      #about p { font-size: 0.97rem; }
+
+      .item-inner { gap: 0.75rem; }
+      .item-thumb { width: 48px; height: 48px; }
+      .item-title { font-size: 0.95rem; }
+      .item-desc { font-size: 0.85rem; }
+
+      #links .link-list a { font-size: 0.95rem; }
     }
   </style>
 </head>
@@ -209,6 +276,7 @@
 
       <header class="site-header">
         <h1>Babis Makrynikolas</h1>
+        <p class="tagline">Product builder and writer.</p>
         <nav class="tab-nav">
           <a href="#" class="nav-link active" data-target="about">About</a>
           <a href="#" class="nav-link" data-target="writing">Writing</a>
@@ -221,8 +289,8 @@
       <section id="about" class="active">
         <h2>About</h2>
         <p>Babis Makrynikolas is a product executive with fifteen years of experience.</p>
-        <p>At Amazon, he worked on marketplace pricing serving 2M+ third-party sellers, helped scale Prime Now's last-mile logistics, and led pricing strategy for EC2, Amazon's largest cloud service. At Blueground, he is part of the executive team, currently leading the marketplace business and demand generation, and has previously overseen product management, design, pricing, and BI/Analytics, contributing to scaling the company from early stage to $700M+ in revenue.</p>
-        <p>Babis holds an MBA from UCLA Anderson and a BSc in Banking and Financial Management from the University of Piraeus.</p>
+        <p>At <a href="https://www.amazon.com" target="_blank" rel="noopener" style="color:inherit;">Amazon</a>, he worked on marketplace pricing serving 2M+ third-party sellers, helped scale Prime Now's last-mile logistics, and led pricing strategy for <a href="https://aws.amazon.com/ec2/" target="_blank" rel="noopener" style="color:inherit;">EC2</a>, Amazon's largest cloud service. At <a href="https://www.theblueground.com" target="_blank" rel="noopener" style="color:inherit;">Blueground</a>, he is part of the executive team, currently leading the marketplace business and demand generation. He has previously overseen product management, design, pricing, and BI/Analytics, contributing to scaling the company from early stage to $700M+ in revenue.</p>
+        <p>Babis holds an MBA from <a href="https://www.anderson.ucla.edu" target="_blank" rel="noopener" style="color:inherit;">UCLA Anderson</a> and a BSc in Banking and Financial Management from the <a href="https://www.unipi.gr/en/home/" target="_blank" rel="noopener" style="color:inherit;">University of Piraeus</a>.</p>
         <p>He writes regularly on <a href="https://bmak.substack.com" target="_blank" rel="noopener" style="color:inherit;">Rubik's Cube</a>, a Substack covering marketplace dynamics, product strategy, and the ideas in between.</p>
         <p>Outside of work, he is passionate about riddles and logic puzzles, and is currently working on a project in that space.</p>
       </section>
